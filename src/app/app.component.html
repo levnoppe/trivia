@@ -1,23 +1,44 @@
-<div class="container">
+<div class="container text-right"  dir="rtl">
   <div class="row">
     <div class="col">
-      <mat-card class="example-card">
-  <mat-card-header>
+      <mat-card  class="example-card qCard">
+  <mat-card-header >
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    <mat-card-title class="bf"> שאלה מספר {{ questions[number].id }}</mat-card-title>
   </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <img *ngIf="questions[number].hasImage"
+       mat-card-image src=[questions[number].imageUrl]
+       alt="image question">
   <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
+    <p class="mf">
+      {{ questions[number].question }}
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
+    <div class="row">
+      <div class="col">
+        <button type="button" class="btn btn-info bt-answer mf"
+                [ngStyle]="getColor(1)"
+                (click)="onAnswer(1)">{{ questions[number].a1 }}</button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-info bt-answer mf"
+                [ngStyle]="getColor(2)"
+                (click)="onAnswer(2)">{{ questions[number].a2 }}</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button type="button" class="btn btn-info bt-answer mf"
+                [ngStyle]="getColor(3)"
+                (click)="onAnswer(3)">{{ questions[number].a3 }}</button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-info bt-answer mf"
+                [ngStyle]="getColor(4)"
+                (click)="onAnswer(4)">{{ questions[number].a4 }}</button>
+      </div>
+    </div>
   </mat-card-actions>
 </mat-card>
     </div>

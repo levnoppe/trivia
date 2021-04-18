@@ -1,0 +1,19 @@
+.bt-answer{
+  width: 97%;
+  min-height: 8vh;
+  margin: 10px;
+}
+p{
+  margin: 10px;
+  height: 50vh;
+}
+
+.qCard{
+  height: 90vh;
+}
+.bf{
+  font-size: 8vh;
+}
+.mf{
+  font-size: 4vh;
+}
